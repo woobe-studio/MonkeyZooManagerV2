@@ -1,11 +1,27 @@
 package zoo.notes;
 
+import java.time.LocalDateTime;
+
 import com.google.gson.JsonObject;
 
+import zoo.animals.Animal;
+
 public class MedicalNote extends BasicNote {
-    double costOfMedications = 0.0;
-    double procedureCost = 0.0;
+    private double costOfMedications;
+    private double procedureCost;
     
+       public MedicalNote(Animal animal, String text, LocalDateTime date) {
+        super(animal, text, date);
+        this.costOfMedications = 5.0;
+        this.procedureCost = 10.0;
+    }
+
+    public MedicalNote(Animal animal, String text, LocalDateTime date, double costOfMedications, double procedureCost) {
+        this(animal, text, date);
+        this.costOfMedications = costOfMedications;
+        this.procedureCost = procedureCost;
+    }
+   
     public double getCostOfMedications() {
         return this.costOfMedications;
     }

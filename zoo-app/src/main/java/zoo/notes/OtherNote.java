@@ -1,9 +1,25 @@
 package zoo.notes;
 
+import java.time.LocalDateTime;
+
 import com.google.gson.JsonObject;
 
+import zoo.animals.Animal;
+
 public class OtherNote extends BasicNote {
-    String topic = "";
+    private String topic = "";
+    
+
+    public OtherNote(Animal animal, String text, LocalDateTime date) {
+        super(animal, text, date);
+        this.topic = "";
+    }
+
+    public OtherNote(Animal animal, String text, LocalDateTime date, String topic) {
+        this(animal, text, date);
+        this.topic = topic;
+    }
+
     
     public String getTopic() {
         return this.topic;

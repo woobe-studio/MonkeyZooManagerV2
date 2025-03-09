@@ -11,6 +11,19 @@ public class BasicNote implements Note {
     private String text;
     private LocalDateTime date; 
 
+
+    public BasicNote(Animal animal, String text, LocalDateTime date) {
+        this.animal = animal;
+        this.text = text;
+        this.date = date;
+    }
+
+    public BasicNote() {
+        this.animal = null;
+        this.text = "";
+        this.date = LocalDateTime.now();
+    }
+
     @Override
     public Animal getAnimal() {
         return animal;
